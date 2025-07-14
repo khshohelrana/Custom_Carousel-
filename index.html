@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Carousels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        
+        :root {
+            --primary-blue: #1374BA;
+            --secondary-purple: #8B5CF6;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #F8F8F8;
+            --card-bg: #FFFFFF;
+            --border-light: #E0E0E0;
+            --shadow-light: rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+           
+          
+            line-height: 1.6;
+            overflow-x: hidden; 
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 20px;
+            
+        }
+
+     h2 {
+            font-family: 'Outfit', sans-serif;
+      font-weight: 997px; 
+      size: 10px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-align: center;
+      text-transform: none; 
+      margin: 20px auto;
+      margin-left: 15px;
+      
+        }
+
+        p {
+            font-family: 'Inter', sans-serif;
+      font-weight: 400;        
+      font-size: 24px;
+      line-height: 100%;      
+      letter-spacing: 0;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 997px;   
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+.highlight-purple {
+  background: linear-gradient(90deg, #0066FF, #FF04FB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+        .section-tag {
+           
+            display: inline-block;
+            background-color: rgba(74, 144, 226, 0.1); 
+            color: var(--primary-blue);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 20px;
+            
+        }
+
+        
+        .logo-carousel-section {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+           
+        }
+
+        .logo-carousel-wrapper {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            
+          
+        }
+
+        .logo-track {
+            display: flex;
+            width: fit-content; 
+            animation: scrollLogos 30s linear infinite; 
+        }
+
+        .logo-item {
+            background-size: 132px 88px;
+            background-color: #666;
+            flex-shrink: 0; 
+            width: 100px; 
+            height: 55px;
+            margin: 0 5px; 
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 0.9em;
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-item:hover {
+            transform: translateY(-5px);
+        }
+
+       
+        @keyframes scrollLogos {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                
+                transform: translateX(-60%);
+            }
+        }
+
+        .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-grid {
+      display: grid;
+      grid-template-rows: repeat(2, auto);
+      gap: 24px;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      animation: scroll-left 30s linear infinite;
+    }
+
+    .carousel-track.reverse {
+      animation: scroll-right 30s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes scroll-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
+    .testimonial-card {
+      background-color: #F3F3F3;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      text-align: left;
+      width: 340px;
+      height: 240px;
+      flex: 0 0 auto;
+      
+    }
+
+    .testimonial-card p {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+
+    .testimonial-card img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .author {
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .title {
+      font-size: 14px;
+      color: #666;
+      
+    }
+
+      
+
+
+       
+        @media (max-width: 992px) {
+            .section-header h2 {
+                font-size: 2em;
+            }
+            .testimonial-card {
+                width: calc(100% / 2);
+            }
+            .nav-button.prev-button { left: 10px; margin-left: 0; }
+            .nav-button.next-button { right: 10px; margin-right: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .section-header h2 {
+                font-size: 1.8em;
+            }
+            .logo-item {
+                width: 100px;
+                height: 55px;
+                margin: 0 15px;
+            }
+            .testimonial-card {
+                width: 100%; 
+                border-right: none;
+                border-bottom: 1px solid var(--border-light);
+            }
+            .testimonial-card:last-child {
+                border-bottom: none;
+            }
+            .testimonial-carousel {
+                padding: 0 20px;
+            }
+            .nav-button {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            .section-header h2 {
+                font-size: 1.5em;
+            }
+            .section-tag {
+                padding: 6px 15px;
+                font-size: 0.8em;
+            }
+            .logo-item {
+                width: 100px;
+                height: 50px;
+                margin: 0 10px;
+                font-size: 0.8em;
+            }
+            .testimonial-card p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+        <section class="logo-carousel-section">
+            <div class="section-header">
+                <span class="section-tag">Partners</span>
+                <h2>Built For Every Step Of <span class="highlight-purple">The Food Supply Chain</span></h2>
+                <p>We work with growers, manufacturers, brokers, and distributors across North America.<br/> Whether you’re in quality assurance, operations, or supply chain, our tools are designed<br/> to support your documentation needs—end to end.</p>
+            </div>
+
+            <div class="logo-carousel-wrapper">
+                <div class="logo-track" id="logoTrack">
+                   
+                    <div class="logo-item"><img src="brand logo/Mask group (1).png" alt=""></div>
+                    <div class="logo-item"><img src="brand logo/Mask group (2).png" alt=""></div>
+                    <div class="logo-item"><img src="brand logo/Mask group (3).png" alt=""></div>
+                    <div class="logo-item"> <img src="brand logo/Mask group (4).png" alt=""></div>
+                    <div class="logo-item"><img src="brand logo/Mask group (5).png" alt=""></div>
+                    <div class="logo-item"><img src="brand logo/Mask group (6).png" alt=""></div>
+                    <div class="logo-item"><img src="brand logo/Mask group (7).png" alt=""></div>
+                    <div class="logo-item"><img src="brand logo/Mask group (8).png" alt=""></div>
+                    <div class="logo-item"><img src="brand logo/Mask group (9).png" alt=""></div>
+                    <div class="logo-item"><img src="brand logo/Mask group (10).png" alt=""></div>
+                    <div class="logo-item"><img src="brand logo/Group 262.png" alt=""></div>
+                   
+                   
+                   
+                </div>
+            </div>
+        </section>
+
+       
+        <section class="testimonial-carousel-section">
+            <div class="section-header">
+                <span class="section-tag">Reviews</span>
+                <h2>What Our <span class="highlight-purple">Customers Are Saying</span></h2>
+                <p>From food manufacturers to global suppliers, teams across the industry rely on Document Compliance Network to streamline their document workflows, simplify audits, and save time. Here’s how we’re making compliance easier for them—and how we can do the same for you.</p>
+            </div>
+ 
+            <div class="carousel-wrapper">
+                <div class="carousel-grid">
+                  <div class="carousel-track">
+                    <div class="testimonial-card">
+                        <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint.</p>
+                        <img src="brand logo/avatar.png" alt="">
+                        <div class="author">Sarah Johnson</div>
+                        <div class="title">Operations Manager, Global Foods Inc.</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint.</p>
+                        <img src="brand logo/avatar (1).png" alt="">
+                         <div class="author">David Lee</div>
+                        <div class="title">QA Director, Fresh Harvest Co.</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint.</p>
+                        <img src="brand logo/avatar.png" alt="">
+                        <div class="author">Maria Garcia</div>
+                        <div class="title">Compliance Lead, Agri-Source Solutions</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint.</p>
+                        <img src="brand logo/avatar (1).png" alt="">
+                         <div class="author">John Smith</div>
+                        <div class="title">Supply Chain Analyst, Pure Foods Corp.</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint.</p>
+                        <img src="brand logo/avatar.png" alt="">
+                        <div class="author">Emily White</div>
+                        <div class="title">Logistics Coordinator, Farm-to-Table Distributors</div>
+                    </div>
+                  </div>
+          
+                  <div class="carousel-track reverse">
+                    <div class="testimonial-card">
+                        <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint.</p>
+                        <img src="brand logo/avatar.png" alt="">
+                        <div class="author">Sarah Johnson</div>
+                        <div class="title">Operations Manager, Global Foods Inc.</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint.</p>
+                        <img src="brand logo/avatar (1).png" alt="">
+                         <div class="author">David Lee</div>
+                        <div class="title">QA Director, Fresh Harvest Co.</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint.</p>
+                        <img src="brand logo/avatar.png" alt="">
+                        <div class="author">Maria Garcia</div>
+                        <div class="title">Compliance Lead, Agri-Source Solutions</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint.</p>
+                        <img src="brand logo/avatar (1).png" alt="">
+                         <div class="author">John Smith</div>
+                        <div class="title">Supply Chain Analyst, Pure Foods Corp.</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint.</p>
+                        <img src="brand logo/avatar.png" alt="">
+                        <div class="author">Emily White</div>
+                        <div class="title">Logistics Coordinator, Farm-to-Table Distributors</div>
+                    </div>
+                  </div>
+                </div>
+        </section>
+    </div>
+
+    <script>
+       
+    </script>
+</body>
+</html>
